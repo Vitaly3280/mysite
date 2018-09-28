@@ -1,0 +1,38 @@
+{% load staticfiles %}
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="{% static 'script.js' %}">
+        alert("dgdf");
+    </script>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-sm bg-light">
+        <ul class="navbar-nav">
+            {% if username %}
+                <li class="nav_item"><a href="/log/out/">Выйти ({{ username }})</a> </li>
+            {% else %}
+                <li class="nav_item"><a href="/log/in/">Войти</a> </li>
+            {% endif %}
+        </ul>
+    </nav>
+
+
+
+    <div class="container">
+        <a href="/">Main</a><br>
+    {% block main %}{% endblock %}
+    {% block myself %}{% endblock %}
+    {% block Eminem %}{% endblock %}
+    {% block onevideo %}{% endblock %}
+    {% block login %}{% endblock %}
+    </div>
+</body>
+</html>
